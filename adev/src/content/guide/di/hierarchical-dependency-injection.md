@@ -19,7 +19,7 @@ Angular has two injector hierarchies:
 
 | Injector hierarchies        | Details |
 |:---                         |:---     |
-| `EnvironmentInjector` hierarchy | Configure an `ElementInjector` in this hierarchy using `@Injectable()` or `providers` array in `ApplicationConfig`. |
+| `EnvironmentInjector` hierarchy | Configure an `EnvironmentInjector` in this hierarchy using `@Injectable()` or `providers` array in `ApplicationConfig`. |
 | `ElementInjector` hierarchy | Created implicitly at each DOM element. An `ElementInjector` is empty by default unless you configure it in the `providers` property on `@Directive()` or `@Component()`. |
 
 <docs-callout title="NgModule Based Applications">
@@ -470,7 +470,7 @@ In the example case, the constraints are:
         This would not be the case for a directive matched at the same location.
     * The ending location happens to be the same as the component itself, because it is the topmost component in this application.
 
-1. The `ElementInjector` provided by the `ApplicationConfig` acts as the fallback injector when the injection token can't be found in the `ElementInjector` hierarchies.
+1. The `EnvironmentInjector` provided by the `ApplicationConfig` acts as the fallback injector when the injection token can't be found in the `ElementInjector` hierarchies.
 
 ### Using the `providers` array
 
